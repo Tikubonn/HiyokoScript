@@ -33,9 +33,7 @@
 
 ## 話者を指定する
 
-<video width="50%" controls>
-  <source src="Sample/話者指定.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232227-66d41556-1d95-48de-9987-6d6cb8058037.mp4
 
 行頭に`#声名`があれば、自動的に話者がその人物に切り替わります。
 また、複数の声名を`*`または`&`で区切ることで、複数の立ち絵を表示させることができます。
@@ -49,9 +47,7 @@
 
 ### 複数の話者を指定する
 
-<video width="50%" controls>
-  <source src="Sample/話者指定2.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232232-8c522708-0c34-4aa4-9294-e7f765d5b2c3.mp4
 
 話者の指定は、再設定されるまでずっと継続されます。
 そのため、ずっと同じ話者に喋らせる場面では、このように書くこともできます。
@@ -68,9 +64,7 @@
 
 ## 立ち絵を指定する
 
-<video width="50%" controls>
-  <source src="Sample/立ち絵指定.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232237-d66cdf5d-89e2-439f-8542-9fe8a075af07.mp4
 
 行頭に`@人物名`があれば、自動的にその人物の立ち絵が表示されます。
 また、複数の人物名を`*`または`&`で区切ることで、複数の立ち絵を表示させることができます。
@@ -91,9 +85,7 @@ $背景色=ffffff
 
 ### 複数の立ち絵を指定する
 
-<video width="50%" controls>
-  <source src="Sample/立ち絵指定2.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232241-caea22b9-a3fc-4185-a88e-16ba4f1a9d9b.mp4
 
 話者の指定と同様に、立ち絵の指定も再設定されるまでずっと継続されます。
 そのため、ずっと同じ立ち絵を表示させる場面では、このように書くこともできます。
@@ -113,9 +105,7 @@ $背景色=ffffff
 
 ### 立ち絵を非表示にする
 
-<video width="50%" controls>
-  <source src="Sample/立ち絵指定3.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232250-f3b0e535-6f8b-41c0-ab0b-924dae17212c.mp4
 
 また、人物名を空にすることで、すべての立ち絵を非表示にすることができます。
 
@@ -163,9 +153,7 @@ $背景画像
 
 ### 背景色
 
-<video width="50%" controls>
-  <source src="Sample/背景色.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232258-211839ac-f3dc-43ec-bb1f-9e90904c83c8.mp4
 
 16進数のカラーコードから背景色を変更します。
 未指定にするとなにも表示しません。
@@ -188,9 +176,7 @@ $背景色
 
 ### 背景画像
 
-<video width="50%" controls>
-  <source src="Sample/背景画像.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232267-f9402f33-2b5f-4b2c-91d2-3a22aa2b31b3.mp4
 
 画像ファイルを背景画像に設定します。
 画像ファイルのパスがファイル名だけであっても、設定ファイルの検索パスが適切に設定されていれば、ひよこすくりぷとは自動的にファイルを検索し、パス名を自動取得してくれます。
@@ -218,9 +204,7 @@ $背景画像
 
 ### 背景動画
 
-<video width="50%" controls>
-  <source src="Sample/背景動画.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232272-bbb00bf5-7ed0-48e9-a983-f024e24b23a8.mp4
 
 動画ファイルを背景画像に設定します。
 動画ファイルのパスがファイル名だけであっても、設定ファイルの検索パスが適切に設定されていれば、ひよこすくりぷとは自動的にファイルを検索し、パス名を自動取得してくれます。
@@ -250,9 +234,7 @@ $背景動画
 
 ### BGM
 
-<video width="50%" controls>
-  <source src="Sample/bgm.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232281-e4c7e832-ef2e-4ac1-99e9-ee9f73e5e0e1.mp4
 
 音声ファイルをBGMに設定します。
 音声ファイルのパスがファイル名だけであっても、設定ファイルの検索パスが適切に設定されていれば、ひよこすくりぷとは自動的にファイルを検索し、パス名を自動取得してくれます。
@@ -282,9 +264,7 @@ $BGM=戦闘機.wav
 
 ### SE
 
-<video width="50%" controls>
-  <source src="Sample/se.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232289-5543f2ba-569b-4c5b-8b45-93fa2fa3a133.mp4
 
 音声ファイルを効果音に設定します。
 音声ファイルのパスがファイル名だけであっても、設定ファイルの検索パスが適切に設定されていれば、ひよこすくりぷとは自動的にファイルを検索し、パス名を自動取得してくれます。
@@ -313,9 +293,7 @@ $SE=もちっ3.mp3
 
 ### 字幕
 
-<video width="50%" controls>
-  <source src="Sample/字幕.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232297-7e904b5c-36d4-4187-acde-813974db6ea2.mp4
 
 ひよこすくりぷとは字幕の色・サイズ・フォントを変数から変更することができます。
 これらの変更は再設定されるまで継続されます。
@@ -341,9 +319,7 @@ $字幕色
 
 ### 特殊効果:もにゅもにゅ
 
-<video width="50%" controls>
-  <source src="Sample/もにゅもにゅ.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232313-e34c2a15-7cd2-427d-8892-60285345411b.mp4
 
 試験的に搭載されたエフェクトです。
 指定された人物をもにゅもにゅ動かします。
@@ -367,9 +343,7 @@ $もにゅもにゅ=ずんだもん*つむぎちゃん
 
 ### 特殊効果:自動もにゅもにゅ
 
-<video width="50%" controls>
-  <source src="Sample/自動もにゅもにゅ.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232321-af07cc78-8d08-492e-bec0-491fa075ed09.mp4
 
 試験的に搭載されたエフェクトです。
 こちらは会話中の人物をもにゅもにゅさせます。
@@ -390,9 +364,7 @@ $自動もにゅもにゅ=0
 
 ### 特殊効果:ぴょんぴょん
 
-<video width="50%" controls>
-  <source src="Sample/ぴょんぴょん.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232328-0d3c72cf-ae6a-4d29-93f2-0828694ce100.mp4
 
 試験的に搭載されたエフェクトです。
 指定された人物をぴょんぴょん跳ねさせます。
@@ -417,9 +389,7 @@ $ぴょんぴょん=ずんだもん*つむぎちゃん
 
 ### 特殊効果:自動ぴょんぴょん
 
-<video width="50%" controls>
-  <source src="Sample/自動ぴょんぴょん.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232333-ec25bc65-da80-4329-90f0-c952cb4577da.mp4
 
 試験的に搭載されたエフェクトです。
 こちらは会話中の人物をぴょんぴょん跳ねさせます。
@@ -440,9 +410,7 @@ $自動ぴょんぴょん=0
 
 ### 特殊効果:ぐにゃぐにゃ
 
-<video width="50%" controls>
-  <source src="Sample/ぐにゃぐにゃ.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232338-f668a51a-f2ff-4e78-a86f-468d92669ddc.mp4
 
 試験的に搭載されたエフェクトです。
 指定された人物をぐにゃぐにゃ揺らします。
