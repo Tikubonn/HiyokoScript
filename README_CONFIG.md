@@ -488,9 +488,7 @@ SofTalkはゆっくり音声としてしられる合成音声ソフトのひと�
 
 ### ずんだもん.json(立ち絵:坂本あひる)
 
-<video width="50%" controls>
-  <source src="Sample/psdtoolkit-0.2/坂本あひる/ずんだもん.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232022-0a3f196e-e92b-468b-8511-be700b2d2cbb.mp4
 
 [ずんだもん.json](./config/psdtoolkit-0.2/坂本あひる/ずんだもん.json)はVOICEVOX:ずんだもんの声と坂本あひる先生の立ち絵が設定された設定ファイルです。
 当然ですが、立ち絵ファイルは同梱されていないので、インポート後`search_paths`にPSDファイルの置かれたフォルダを指定する必要があります。
@@ -512,9 +510,7 @@ https://seiga.nicovideo.jp/seiga/im10788496
 
 ### 四国めたん.json(立ち絵:坂本あひる)
 
-<video width="50%" controls>
-  <source src="Sample/psdtoolkit-0.2/坂本あひる/四国めたん.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232043-7e5ff976-0c59-499f-ba10-93855eb0b715.mp4
 
 [四国めたん.json](./config/psdtoolkit-0.2/坂本あひる/四国めたん.json)はVOICEVOX:四国めたんの声と坂本あひる先生の立ち絵が設定された設定ファイルです。
 当然ですが、立ち絵ファイルは同梱されていないので、インポート後`search_paths`にPSDファイルの置かれたフォルダを指定する必要があります。
@@ -536,9 +532,7 @@ https://seiga.nicovideo.jp/seiga/im10791276
 
 ### 春日部つむぎ.json(立ち絵:坂本あひる)
 
-<video width="50%" controls>
-  <source src="Sample/psdtoolkit-0.2/坂本あひる/春日部つむぎ.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232056-3043a444-8d59-4d62-ab4e-7774e9d676c3.mp4
 
 [春日部つむぎ.json](./config/psdtoolkit-0.2/坂本あひる/春日部つむぎ.json)はVOICEVOX:春日部つむぎの声と坂本あひる先生の立ち絵が設定された設定ファイルです。
 当然ですが、立ち絵ファイルは同梱されていないので、インポート後`search_paths`にPSDファイルの置かれたフォルダを指定する必要があります。
@@ -560,9 +554,7 @@ https://seiga.nicovideo.jp/seiga/im10849150
 
 ### 九州そら.json(立ち絵:坂本あひる)
 
-<video width="50%" controls>
-  <source src="Sample/psdtoolkit-0.2/坂本あひる/九州そら.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232067-84d41f7f-b1ba-4d04-9bbb-b7474f1b90c6.mp4
 
 [九州そら.json](./config/psdtoolkit-0.2/坂本あひる/九州そら.json)はVOICEVOX:九州そらの声と坂本あひる先生の立ち絵が設定された設定ファイルです。
 当然ですが、立ち絵ファイルは同梱されていないので、インポート後`search_paths`にPSDファイルの置かれたフォルダを指定する必要があります。
@@ -584,9 +576,7 @@ https://seiga.nicovideo.jp/seiga/im10924061
 
 ### 雨晴はう.json(立ち絵:坂本あひる)
 
-<video width="50%" controls>
-  <source src="Sample/psdtoolkit-0.2/坂本あひる/雨晴はう.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232080-8844531d-59b8-4fbf-840a-3a4254495d30.mp4
 
 [雨晴はう.json](./config/psdtoolkit-0.2/坂本あひる/雨晴はう.json)はVOICEVOX:雨晴はうの声と坂本あひる先生の立ち絵が設定された設定ファイルです。
 当然ですが、立ち絵ファイルは同梱されていないので、インポート後`search_paths`にPSDファイルの置かれたフォルダを指定する必要があります。
@@ -608,9 +598,7 @@ https://seiga.nicovideo.jp/seiga/im10880094
 
 ### 結月ゆかり.json(立ち絵:MtU)
 
-<video width="50%" controls>
-  <source src="Sample/psdtoolkit-0.2/MtU/結月ゆかり.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232103-65f106ae-2e5b-4ac6-ac79-b2cd8b989592.mp4
 
 [結月ゆかり.json](./config/psdtoolkit-0.2/MtU/結月ゆかり.json)はVOICEROID2:結月ゆかりの声とMtU先生の立ち絵が設定された設定ファイルです。
 当然ですが、立ち絵ファイルは同梱されていないので、インポート後`search_paths`にPSDファイルの置かれたフォルダを指定する必要があります。
@@ -632,9 +620,7 @@ https://seiga.nicovideo.jp/seiga/im8124707
 
 ### 弦巻マキ.json(立ち絵:MtU)
 
-<video width="50%" controls>
-  <source src="Sample/psdtoolkit-0.2/MtU/弦巻マキ.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232109-0afc0c35-c1c6-4730-999c-a50f3f91ff3a.mp4
 
 [弦巻マキ.json](./config/psdtoolkit-0.2/MtU/弦巻マキ.json)はVOICEROID2:弦巻マキの声とMtU先生の立ち絵が設定された設定ファイルです。
 当然ですが、立ち絵ファイルは同梱されていないので、インポート後`search_paths`にPSDファイルの置かれたフォルダを指定する必要があります。
@@ -656,9 +642,7 @@ https://seiga.nicovideo.jp/seiga/im8145281
 
 ### 紲星あかり.json(立ち絵:MtU)
 
-<video width="50%" controls>
-  <source src="Sample/psdtoolkit-0.2/MtU/紲星あかり.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173232118-523153c8-00d1-4960-9f23-5f0ffadc2869.mp4
 
 [紲星あかり.json](./config/psdtoolkit-0.2/MtU/紲星あかり.json)はVOICEROID2:紲星あかりの声とMtU先生の立ち絵が設定された設定ファイルです。
 当然ですが、立ち絵ファイルは同梱されていないので、インポート後`search_paths`にPSDファイルの置かれたフォルダを指定する必要があります。
