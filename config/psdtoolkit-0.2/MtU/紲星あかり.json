@@ -1,0 +1,151 @@
+/*
+  MtU先生の描いた紲星あかり立ち絵用の設定ファイルです。
+  設定ファイルにインポート指定することで、すぐ使うことができます。
+
+  https://seiga.nicovideo.jp/seiga/im8013511
+*/
+{
+  "speakers": {
+    "あかりちゃん": {
+      "voices": {
+        "きず": {
+          "type": "assistant_seika",
+          "name": "紲星あかり",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "default": true,
+            "src": "MtU_akari2.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "レイヤー2": false,
+              "あかり/表情/表情パーツ/目/ウインク": false,
+              "あかり/表情/表情パーツ/口/ぺろっ": false,
+              "あかり/手前腕/2": false,
+              "あかり/手前腕/1": true,
+            },
+            "blink": {
+              "a": "あかり/表情/表情パーツ/目/普通",
+              "e": "あかり/表情/表情パーツ/目/閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "あかり/表情/表情パーツ/口/笑い開",
+              "e": "あかり/表情/表情パーツ/口/笑い",
+            },
+          },
+        },
+        "きずにこ": {
+          "type": "assistant_seika",
+          "name": "紲星あかり",
+          "emotions": {
+            "喜び": 0.3,
+          },
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_akari2.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "レイヤー2": false,
+              "あかり/表情/表情パーツ/眉/普通": false,
+              "あかり/表情/表情パーツ/眉/困り": true,
+              "あかり/表情/表情パーツ/目/ウインク": false,
+              "あかり/表情/表情パーツ/目/にっこり": true,
+              "あかり/表情/表情パーツ/口/ぺろっ": false,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "あかり/表情/表情パーツ/口/笑い開",
+              "e": "あかり/表情/表情パーツ/口/笑い",
+            },
+          },
+        },
+        "きずおこ": {
+          "type": "assistant_seika",
+          "name": "紲星あかり",
+          "emotions": {
+            "怒り": 0.3,
+          },
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_akari2.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "レイヤー2": false,
+              "あかり/表情/闇": true,
+              "あかり/表情/表情パーツ/眉/普通": false,
+              "あかり/表情/表情パーツ/眉/困り": true,
+              "あかり/表情/表情パーツ/目/ウインク": false,
+              "あかり/表情/表情パーツ/目/にっこり": true,
+              "あかり/表情/表情パーツ/口/ぺろっ": false,
+              "あかり/手前腕/2": false,
+              "あかり/手前腕/1": true,
+            },
+            "blink": {
+              "a": "あかり/表情/表情パーツ/目/せくしー",
+              "e": "あかり/表情/表情パーツ/目/閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "あかり/表情/表情パーツ/口/ほー",
+              "e": "あかり/表情/表情パーツ/口/すん",
+            },
+          },
+        },
+        "きずしょぼ": {
+          "type": "assistant_seika",
+          "name": "紲星あかり",
+          "emotions": {
+            "悲しみ": 0.3,
+          },
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_akari2.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "あかり/表情/表情パーツ/眉/普通": false,
+              "あかり/表情/表情パーツ/眉/困り": true,
+              "あかり/表情/表情パーツ/目/ウインク": false,
+              "あかり/表情/表情パーツ/目/＞＜": true,
+              "あかり/表情/表情パーツ/口/ぺろっ": false,
+              "あかり/手前腕/2": false,
+              "あかり/手前腕/1": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "あかり/表情/表情パーツ/口/はわわ",
+              "e": "あかり/表情/表情パーツ/口/むぐぐ",
+            },
+          },
+        },
+        "きずどや": {
+          "type": "assistant_seika",
+          "name": "紲星あかり",
+          "emotions": {
+            "喜び": 0.3,
+          },
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_akari2.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "あかり/表情/表情パーツ/目/ウインク": false,
+              "あかり/表情/表情パーツ/目/ゆるとじ": true,
+              "あかり/表情/表情パーツ/口/ぺろっ": false,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "あかり/表情/表情パーツ/口/ｳｪﾋﾋ",
+              "e": "あかり/表情/表情パーツ/口/ω",
+            },
+          },
+        },
+      },
+    },
+  },
+}

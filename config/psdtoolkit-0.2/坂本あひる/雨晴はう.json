@@ -1,0 +1,124 @@
+/*
+  坂本あひる先生の描いた雨晴はう立ち絵用の設定ファイルです。
+  設定ファイルにインポート指定することで、すぐ使うことができます。
+
+  https://seiga.nicovideo.jp/seiga/im10880094
+*/
+{
+  "speakers": {
+    "はうちゃん": {
+      "voices": {
+        "はう": {
+          "type": "voicevox",
+          "name": "雨晴はう",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "default": true,
+            "src": "雨晴はう立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+            },
+            "blink": {
+              "a": "!目/*目セット/!黒目/*基本目",
+              "e": "!目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*おー",
+              "b": "!口/*お",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+        "はうにこ": {
+          "type": "voicevox",
+          "name": "雨晴はう",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "雨晴はう立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!目/*にっこり": true,
+              "!左腕/*胸元": true,
+              "!右腕/*ゆびさし": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*えへ",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+        "はうおこ": {
+          "type": "voicevox",
+          "name": "雨晴はう",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "雨晴はう立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!眉/*こまり": true,
+              "!目/*目セット/*見開き白目": true,
+              "!顔色/かげり": true,
+              "!右腕/*メス": true,
+            },
+            "blink": {
+              "a": "!目/*目セット/!黒目/*基本目2",
+              "e": "!目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*え",
+              "e": "!口/*ん",
+            },
+          },
+        },
+        "はうしょぼ": {
+          "type": "voicevox",
+          "name": "雨晴はう",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "雨晴はう立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!眉/*こまり": true,
+              "!目/*><": true,
+              "!左腕/*胸元": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*うへえー",
+              "b": "!口/*え",
+              "e": "!口/*むくー",
+            },
+          },
+        },
+        "はうどや": {
+          "type": "voicevox",
+          "name": "雨晴はう",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "雨晴はう立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!眉/*こまり": true,
+            },
+            "blink": {
+              "a": "!目/*目セット/!黒目/*基本目",
+              "e": "!目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*えへ",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+      },
+    },
+  },
+}

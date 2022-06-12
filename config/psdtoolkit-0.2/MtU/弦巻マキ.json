@@ -1,0 +1,125 @@
+/*
+  MtU先生の描いた弦巻マキ立ち絵用の設定ファイルです。
+  設定ファイルにインポート指定することで、すぐ使うことができます。
+
+  https://seiga.nicovideo.jp/seiga/im8145281
+*/
+{
+  "speakers": {
+    "マキさん": {
+      "voices": {
+        "マキ": {
+          "type": "assistant_seika",
+          "name": "民安ともえ(v1)",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "default": true,
+            "src": "MtU_maki_ver3.0.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "まきまき/共通パーツ/表情/眉/*下げ": true,
+            },
+            "blink": {
+              "a": "まきまき/共通パーツ/表情/目/*普通",
+              "e": "まきまき/共通パーツ/表情/目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "まきまき/共通パーツ/表情/口/*笑開",
+              "e": "まきまき/共通パーツ/表情/口/*笑",
+            },
+          },
+        },
+        "マキにこ": {
+          "type": "assistant_seika",
+          "name": "民安ともえ(v1)",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_maki_ver3.0.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "まきまき/*ポーズ２": true,
+              "まきまき/共通パーツ/表情/眉/*おこ": true,
+              "まきまき/共通パーツ/表情/目/*＞＜": true,
+              "まきまき/*ポーズ２": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "まきまき/共通パーツ/表情/口/*笑開",
+              "e": "まきまき/共通パーツ/表情/口/*笑",
+            },
+          },
+        },
+        "マキおこ": {
+          "type": "assistant_seika",
+          "name": "民安ともえ(v1)",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_maki_ver3.0.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "まきまき/共通パーツ/表情/影": true,
+              "まきまき/共通パーツ/表情/眉/*困る": true,
+            },
+            "blink": {
+              "a": "まきまき/共通パーツ/表情/目/*レイプ目ｼﾞｯ",
+              "e": "まきまき/共通パーツ/表情/目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "まきまき/共通パーツ/表情/口/*ほへー",
+              "b": "まきまき/共通パーツ/表情/口/*ほー",
+              "e": "まきまき/共通パーツ/表情/口/*普通",
+            },
+          },
+        },
+        "マキしょぼ": {
+          "type": "assistant_seika",
+          "name": "民安ともえ(v1)",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_maki_ver3.0.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "まきまき/共通パーツ/表情/眉/*困る": true,
+            },
+            "blink": {
+              "a": "まきまき/共通パーツ/表情/目/*普通",
+              "e": "まきまき/共通パーツ/表情/目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "まきまき/共通パーツ/表情/口/*はわわ",
+              "b": "まきまき/共通パーツ/表情/口/*ほへー",
+              "e": "まきまき/共通パーツ/表情/口/*うへー",
+            },
+          },
+        },
+        "マキどや": {
+          "type": "assistant_seika",
+          "name": "民安ともえ(v1)",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_maki_ver3.0.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "まきまき/共通パーツ/表情/眉/*困る": true,
+              "まきまき/共通パーツ/表情/目/*じとー": true,
+              "まきまき/*ポーズ２": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "まきまき/共通パーツ/表情/口/*わはは",
+              "b": "まきまき/共通パーツ/表情/口/*笑開",
+              "e": "まきまき/共通パーツ/表情/口/*ω",
+            },
+          },
+        },
+      },
+    },
+  },
+}

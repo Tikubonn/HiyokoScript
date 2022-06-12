@@ -1,0 +1,144 @@
+/*
+  坂本あひる先生の描いたずんだもん立ち絵用の設定ファイルです。
+  設定ファイルにインポート指定することで、すぐ使うことができます。
+
+  https://seiga.nicovideo.jp/seiga/im10788496
+*/
+{
+  "speakers": {
+    "ずんだもん": {
+      "voices": {
+        "ずん": {
+          "type": "voicevox",
+          "name": "ずんだもん",
+          "graphic": {
+            "type": "psdtoolkit_0.1.3",
+            "default": true,
+            "src": "ずんだもん立ち絵素材2.2.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!口/*むふ": true,
+            },
+            "blink": {
+              "m4": {
+                "!目/*UU": true,
+              },
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "m4": {
+                "!口/*ほあー": true,
+              },
+            },
+          },
+        },
+        "ずんにこ": {
+          "type": "voicevox",
+          "name": "ずんだもん",
+          "style": "あまあま",
+          "graphic": {
+            "type": "psdtoolkit_0.1.3",
+            "src": "ずんだもん立ち絵素材2.2.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!目/*にっこり": true,
+              "!口/*むふ": true,
+              "*服装1/!右腕/*手を挙げる": true,
+              "*服装1/!左腕/*手を挙げる": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "m4": {
+                "!口/*ほあー": true,
+              },
+            },
+          },
+        },
+        "ずんおこ": {
+          "type": "voicevox",
+          "name": "ずんだもん",
+          "style": "ツンツン",
+          "graphic": {
+            "type": "psdtoolkit_0.1.3",
+            "src": "ずんだもん立ち絵素材2.2.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!目/*細め目": true,
+              "!口/*むふ": true,
+              "*服装1/!右腕/*指差し": true,
+              "*服装1/!左腕/*腰": true,
+              "!顔色/*(非表示)": true,
+              "!顔色/かげり": true,
+            },
+            "blink": {
+              "m4": {
+                "!目/*なごみ目": true,
+              },
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "m4": {
+                "!口/*んあー": true,
+              },
+            },
+          },
+        },
+        "ずんしょぼ": {
+          "type": "voicevox",
+          "name": "ずんだもん",
+          "graphic": {
+            "type": "psdtoolkit_0.1.3",
+            "src": "ずんだもん立ち絵素材2.2.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!眉/*困り眉2": true,
+              "!目/*><": true,
+              "!口/*んー": true,
+              "*服装1/!右腕/*口元": true,
+              "*服装1/!左腕/*口元": true,
+              "!顔色/*(非表示)": true,
+              "!顔色/かげり": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "m4": {
+                "!口/*んあー": true,
+              },
+            },
+          },
+        },
+        "ずんどや": {
+          "type": "voicevox",
+          "name": "ずんだもん",
+          "style": "あまあま",
+          "graphic": {
+            "type": "psdtoolkit_0.1.3",
+            "src": "ずんだもん立ち絵素材2.2.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!目/*ジト目": true,
+              "!口/*むふ": true,
+              "*服装1/!右腕/*腰": true,
+              "*服装1/!左腕/*基本": true,
+            },
+            "blink": {
+              "m4": {
+                "!目/*UU": true,
+              },
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "m4": {
+                "!口/*ほー": true,
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+}

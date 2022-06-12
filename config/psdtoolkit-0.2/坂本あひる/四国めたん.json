@@ -1,0 +1,133 @@
+/*
+  坂本あひる先生の描いた四国めたん立ち絵用の設定ファイルです。
+  設定ファイルにインポート指定することで、すぐ使うことができます。
+
+  https://seiga.nicovideo.jp/seiga/im10791276
+*/
+{
+  "speakers": {
+    "めたんちゃん": {
+      "voices": {
+        "めた": {
+          "type": "voicevox",
+          "name": "四国めたん",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "default": true,
+            "src": "四国めたん立ち絵素材2.1.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "*白ロリ服/!左腕/*抱える": true,
+            },
+            "blink": {
+              "a": "!目/*目セット/!黒目/*普通目",
+              "e": "!目/*目閉じ2",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*わあー",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+        "めたにこ": {
+          "type": "voicevox",
+          "name": "四国めたん",
+          "style": "あまあま",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "四国めたん立ち絵素材2.1.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!目/*目閉じ": true,
+              "*白ロリ服/!左腕/*抱える": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*わあー",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+        "めたおこ": {
+          "type": "voicevox",
+          "name": "四国めたん",
+          "style": "ツンツン",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "四国めたん立ち絵素材2.1.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!目/*目セット/*普通白目": true,
+              "!顔色/*(非表示)": true,
+              "!顔色/かげり": true,
+              "*白ロリ服/!左腕/*口元に指": true,
+              "*白ロリ服/!右腕/*普通": true,
+            },
+            "blink": {
+              "a": "!目/*目セット/!黒目/*普通目2",
+              "e": "!目/*目閉じ2",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*うえー",
+              "e": "!口/*もむー",
+            },
+          },
+        },
+        "めたしょぼ": {
+          "type": "voicevox",
+          "name": "四国めたん",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "四国めたん立ち絵素材2.1.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!眉/*太眉こまり": true,
+              "!目/*目セット/*普通白目": true,
+              "!顔色/*青ざめ": true,
+              "*白ロリ服/!左腕/*抱える": true,
+              "*白ロリ服/!右腕/*普通": true,
+            },
+            "blink": {
+              "a": "!目/*目セット/!黒目/*カメラ目線",
+              "e": "!目/*目閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*うえー",
+              "e": "!口/*んー",
+            },
+          },
+        },
+        "めたどや": {
+          "type": "voicevox",
+          "name": "四国めたん",
+          "style": "あまあま",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "四国めたん立ち絵素材2.1.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!眉/*太眉ごきげん": true,
+              "!目/*目セット/*普通白目": true,
+              "*白ロリ服/!左腕/*口元に指": true,
+              "*白ロリ服/!右腕/*普通": true,
+            },
+            "blink": {
+              "a": "!目/*目セット/!黒目/*普通目",
+              "e": "!目/*目閉じ2",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*わあー",
+              "e": "!口/*にやり",
+            },
+          },
+        },
+      },
+    },
+  },
+}

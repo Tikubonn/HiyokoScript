@@ -1,0 +1,302 @@
+{
+  "speakers": {
+    "ずんだもん": {
+      "voices": {
+        "ずん": {
+          "type": "voicevox",
+          "name": "ずんだもん",
+          "graphic": {
+            "type": "simple",
+            "default": true,
+            "src": "./SampleCharacterGraphic/ずんだもん.png",
+          },
+        },
+        "ずんにこ": {
+          "type": "voicevox",
+          "name": "ずんだもん",
+          "style": "あまあま",
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/ずんだもん喜.png",
+          },
+        },
+        "ずんにや": {
+          "type": "copy",
+          "voice": "ずん",
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/ずんだもん煽.png",
+          },
+        },
+        "ずんおこ": {
+          "type": "voicevox",
+          "name": "ずんだもん",
+          "style": "ツンツン",
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/ずんだもん怒.png",
+          },
+        },
+        "ずんしょぼ": {
+          "type": "voicevox",
+          "name": "ずんだもん",
+          "pitch_scale": -0.1, //声高
+          "intonation_scale": 0.5, //抑揚
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/ずんだもん悲.png",
+          },
+        },
+      },
+    },
+    "つむぎちゃん": {
+      "voices": {
+        "つむ": {
+          "type": "voicevox",
+          "name": "春日部つむぎ",
+          "graphic": {
+            "type": "simple",
+            "default": true,
+            "src": "./SampleCharacterGraphic/春日部つむぎ.png",
+          },
+        },
+        "つむにこ": {
+          "type": "copy",
+          "voice": "つむ",
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/春日部つむぎ喜.png",
+          },
+        },
+        "つむにや": {
+          "type": "copy",
+          "voice": "つむ",
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/春日部つむぎ煽.png",
+          },
+        },
+        "つむおこ": {
+          "type": "voicevox",
+          "name": "春日部つむぎ",
+          "pitch_scale": -0.05, //声高
+          "intonation_scale": 1.5, //抑揚
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/春日部つむぎ怒.png",
+          },
+        },
+        "つむしょぼ": {
+          "type": "voicevox",
+          "name": "春日部つむぎ",
+          "pitch_scale": -0.1, //声高
+          "intonation_scale": 0.5, //抑揚
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/春日部つむぎ悲.png",
+          },
+        },
+      },
+    },
+    "ゆかりさん": {
+      "voices": {
+        "ゆか": {
+          "type": "assistant_seika",
+          "name": "結月ゆかり",
+          "graphic": {
+            "type": "simple",
+            "default": true,
+            "src": "./SampleCharacterGraphic/結月ゆかり.png",
+          },
+        },
+        "ゆかにこ": {
+          "type": "assistant_seika",
+          "name": "結月ゆかり",
+          "emotions": {
+            "喜び": 0.5,
+          },
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/結月ゆかり喜.png",
+          },
+        },
+        "ゆかにや": {
+          "type": "copy",
+          "voice": "ゆか",
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/結月ゆかり煽.png",
+          },
+        },
+        "ゆかおこ": {
+          "type": "assistant_seika",
+          "name": "結月ゆかり",
+          "emotions": {
+            "怒り": 0.5,
+          },
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/結月ゆかり怒.png",
+          },
+        },
+        "ゆかしょぼ": {
+          "type": "assistant_seika",
+          "name": "結月ゆかり",
+          "emotions": {
+            "悲しみ": 0.5,
+          },
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/結月ゆかり悲.png",
+          },
+        },
+      },
+    },
+    "れいむ": {
+      "voices": {
+        "れい": {
+          "type": "softalk",
+          "name": "女性1",
+          "graphic": {
+            "type": "simple",
+            "default": true,
+            "src": "./SampleCharacterGraphic/れいむ.png",
+          },
+        },
+        "れいにこ": {
+          "type": "softalk",
+          "name": "女性1",
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/れいむ喜.png",
+          },
+        },
+        "れいにや": {
+          "type": "copy",
+          "voice": "れい",
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/れいむ煽.png",
+          },
+        },
+        "れいおこ": {
+          "type": "softalk",
+          "name": "女性1",
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/れいむ怒.png",
+          },
+        },
+        "れいしょぼ": {
+          "type": "softalk",
+          "name": "女性1",
+          "graphic": {
+            "type": "simple",
+            "src": "./SampleCharacterGraphic/れいむ悲.png",
+          },
+        },
+      },
+    },
+  },
+  "voicevox": {
+    "host": "localhost",
+    "port": 50021,
+  },
+  "softalk": {
+    "softalkw_exe_path": "C:/Users/tikubonn/Desktop/softalk/softalkw.exe",
+  },
+  "assistant_seika": {
+    "seika_say2_exe_path": "C:/Users/tikubonn/Downloads/assistantseika20220504u/SeikaSay2/SeikaSay2.exe",
+  },
+  "hiyoko_script": {
+    "hiyoko_script_command": "py HiyokoScript.py",
+  },
+  "video": {
+    "width": 1280,
+    "height": 720,
+    "frame_rate": 24,
+    "scale": 1,
+    "audio_rate": 44100,
+    "audio_ch": 2,
+  },
+  "voice_generator": {
+    "type": "simple",
+  },
+  "graphic_generator": {
+    "type": "simple",
+    "y": 0,
+  },
+  "voice_postprocessors": [],
+  "graphic_postprocessors": [
+    {
+      "type": "hopping_at_speaking", //会話中ぴょんぴょん動くエフェクト
+      "crash_ratio": 1.05,
+      "height": 50,
+      "interval": 0.5,
+    },
+    {
+      "type": "bounce_at_speaking", //会話中もにゅもにゅ動くエフェクト
+      "crash_ratio": 1.05,
+    },
+    {
+      "type": "hopping", //ぴょんぴょん動くエフェクト
+      "crash_ratio": 1.05,
+      "height": 50,
+      "interval": 0.5,
+    },
+    {
+      "type": "bounce", //もにゅもにゅ動くエフェクト
+      "crash_ratio": 1.05,
+      "interval": 0.5,
+    },
+    {
+      "type": "raster", //ぐにゃぐにゃ動くエフェクト
+      "width": 100,
+      "height": 100,
+      "interval": 1.0,
+    },
+  ],
+  "background_object_generators": [
+    {
+      "type": "color_background",
+    },
+    {
+      "type": "image_background",
+      "stretch": true,
+    },
+    {
+      "type": "video_background",
+      "stretch": true,
+      "loop": false,
+    },
+  ],
+  "foreground_object_generators": [
+    {
+      "type": "cinema_scope",
+      "ratio": 1.33,
+    },
+    {
+      "type": "subtitle",
+      "x": 0,
+      "y": 316,
+      "font": "Meiryo",
+      "size": 24,
+    },
+    {
+      "type": "bgm",
+      "volume": 0.3,
+    },
+    {
+      "type": "se",
+      "volume": 0.6,
+    },
+  ], 
+  "search_paths": [
+    "./SampleCharacterGraphic",
+    "./SampleBackgroundImage",
+    "./SampleBackgroundVideo",
+    "./SampleBGM",
+    "./SampleSE",
+  ],
+  "voice_save_dir": "./voice",
+}

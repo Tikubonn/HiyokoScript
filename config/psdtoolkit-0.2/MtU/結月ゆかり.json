@@ -1,0 +1,134 @@
+/*
+  MtU先生の描いた結月ゆかり立ち絵用の設定ファイルです。
+  設定ファイルにインポート指定することで、すぐ使うことができます。
+
+  https://seiga.nicovideo.jp/seiga/im8124707
+*/
+{
+  "speakers": {
+    "ゆかりさん": {
+      "voices": {
+        "ゆか": {
+          "type": "assistant_seika",
+          "name": "結月ゆかり",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "default": true,
+            "src": "MtU_yukari_ver4.0.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+            },
+            "blink": {
+              "a": "ゆかりん/共通パーツ/表情/目/*普通",
+              "e": "ゆかりん/共通パーツ/表情/目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "ゆかりん/共通パーツ/表情/口/*笑開",
+              "e": "ゆかりん/共通パーツ/表情/口/*笑",
+            },
+          },
+        },
+        "ゆかにこ": {
+          "type": "assistant_seika",
+          "name": "結月ゆかり",
+          "emotions": {
+            "喜び": 0.3,
+          },
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_yukari_ver4.0.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "ゆかりん/共通パーツ/表情/眉/*おこ": true,
+              "ゆかりん/共通パーツ/表情/目/*＞＜": true,
+              "ゆかりん/*ポーズ２": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "ゆかりん/共通パーツ/表情/口/*ｳｪﾋﾋ",
+              "e": "ゆかりん/共通パーツ/表情/口/*にんまり",
+            },
+          },
+        },
+        "ゆかおこ": {
+          "type": "assistant_seika",
+          "name": "結月ゆかり",
+          "emotions": {
+            "怒り": 0.3,
+          },
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_yukari_ver4.0.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "ゆかりん/共通パーツ/表情/影": true,
+              "ゆかりん/共通パーツ/表情/眉/*困り": true,
+            },
+            "blink": {
+              "a": "ゆかりん/共通パーツ/表情/目/*レイプ目見開き",
+              "e": "ゆかりん/共通パーツ/表情/目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "ゆかりん/共通パーツ/表情/口/*ほへー",
+              "b": "ゆかりん/共通パーツ/表情/口/*ほー",
+              "e": "ゆかりん/共通パーツ/表情/口/*普通",
+            },
+          },
+        },
+        "ゆかしょぼ": {
+          "type": "assistant_seika",
+          "name": "結月ゆかり",
+          "emotions": {
+            "悲しみ": 0.3,
+          },
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_yukari_ver4.0.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "ゆかりん/共通パーツ/表情/眉/*困り": true,
+            },
+            "blink": {
+              "a": "ゆかりん/共通パーツ/表情/目/*普通",
+              "e": "ゆかりん/共通パーツ/表情/目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "ゆかりん/共通パーツ/表情/口/*あわわ",
+              "b": "ゆかりん/共通パーツ/表情/口/*はわわ",
+              "e": "ゆかりん/共通パーツ/表情/口/*うへー",
+            },
+          },
+        },
+        "ゆかどや": {
+          "type": "assistant_seika",
+          "name": "結月ゆかり",
+          "emotions": {
+            "喜び": 0.3,
+          },
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "MtU_yukari_ver4.0.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "ゆかりん/共通パーツ/表情/眉/*困り": true,
+              "ゆかりん/共通パーツ/表情/目/*じとー": true,
+              "ゆかりん/*ポーズ２": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "ゆかりん/共通パーツ/表情/口/*ｳｪﾋﾋ",
+              "e": "ゆかりん/共通パーツ/表情/口/*にんまり",
+            },
+          },
+        },
+      },
+    },
+  },
+}

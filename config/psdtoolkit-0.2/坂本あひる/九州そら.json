@@ -1,0 +1,130 @@
+/*
+  坂本あひる先生の描いた九州そら立ち絵用の設定ファイルです。
+  設定ファイルにインポート指定することで、すぐ使うことができます。
+
+  https://seiga.nicovideo.jp/seiga/im10924061
+*/
+{
+  "speakers": {
+    "そらちゃん": {
+      "voices": {
+        "そら": {
+          "type": "voicevox",
+          "name": "九州そら",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "default": true,
+            "src": "九州そら立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+            },
+            "blink": {
+              "a": "!目/*基本目",
+              "e": "!目/*閉じ目",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*あはー",
+              "b": "!口/*あは",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+        "そらにこ": {
+          "type": "voicevox",
+          "name": "九州そら",
+          "style": "あまあま",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "九州そら立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!眉/*上がり眉": true,
+              "!目/*にっこり": true,
+              "!右腕/*頬に手": true,
+              "!左腕/*頬に手": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*あはー",
+              "b": "!口/*あは",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+        "そらおこ": {
+          "type": "voicevox",
+          "name": "九州そら",
+          "style": "ツンツン",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "九州そら立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!眉/*怒り眉": true,
+              "!目/*なごみ目": true,
+              "!顔色/*(非表示)": true,
+              "!顔色/かげり": true,
+              "!右腕/*指立て": true,
+              "!左腕/*頬に手": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*おー",
+              "b": "!口/*お",
+              "e": "!口/*ん",
+            },
+          },
+        },
+        "そらしょぼ": {
+          "type": "voicevox",
+          "name": "九州そら",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "九州そら立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "汗など/涙": true,
+              "!目/*><": true,
+              "!右腕/*頬に手": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*ほー",
+              "b": "!口/*んあ",
+              "e": "!口/*ん",
+            },
+          },
+        },
+        "そらどや": {
+          "type": "voicevox",
+          "name": "九州そら",
+          "style": "あまあま",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "九州そら立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!眉/*困り眉": true,
+              "!目/*なごみ目": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*あはー",
+              "b": "!口/*あは",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+      },
+    },
+  },
+}

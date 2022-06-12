@@ -1,0 +1,120 @@
+/*
+  坂本あひる先生の描いた春日部つむぎ立ち絵用の設定ファイルです。
+  設定ファイルにインポート指定することで、すぐ使うことができます。
+
+  https://seiga.nicovideo.jp/seiga/im10849150
+*/
+{
+  "speakers": {
+    "つむぎちゃん": {
+      "voices": {
+        "つむ": {
+          "type": "voicevox",
+          "name": "春日部つむぎ",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "default": true,
+            "src": "春日部つむぎ立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+            },
+            "blink": {
+              "a": "!目/*基本目セット/!黒目/*基本",
+              "e": "!目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*わあーい",
+              "b": "!口/*わあ",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+        "つむにこ": {
+          "type": "voicevox",
+          "name": "春日部つむぎ",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "春日部つむぎ立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!目/*にっこり": true,
+              "!左腕/*ピース": true,
+              "!右腕/*ピース": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*わあーい",
+              "b": "!口/*わあ",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+        "つむおこ": {
+          "type": "voicevox",
+          "name": "春日部つむぎ",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "春日部つむぎ立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!目/*にっこり": true,
+              "!ほっぺ/*青ざめ": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*わあーい",
+              "b": "!口/*わあ",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+        "つむしょぼ": {
+          "type": "voicevox",
+          "name": "春日部つむぎ",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "春日部つむぎ立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!まゆ/*困り眉": true,
+              "!目/*><": true,
+            },
+            "blink": {
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*えあー",
+              "e": "!口/*むん",
+            },
+          },
+        },
+        "つむどや": {
+          "type": "voicevox",
+          "name": "春日部つむぎ",
+          "graphic": {
+            "type": "psdtoolkit_0.2",
+            "src": "春日部つむぎ立ち絵素材.psd", 
+            "scale": 0.5,
+            "layer_visibles": {
+              "!まゆ/*困り眉": true,
+            },
+            "blink": {
+              "a": "!目/*基本目セット/!黒目/*基本",
+              "e": "!目/*閉じ",
+            },
+            "lipsync": {
+              "reference_layer": 30,
+              "a": "!口/*わあ",
+              "e": "!口/*ほほえみ",
+            },
+          },
+        },
+      },
+    },
+  },
+}

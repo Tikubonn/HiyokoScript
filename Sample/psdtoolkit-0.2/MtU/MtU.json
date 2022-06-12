@@ -1,0 +1,93 @@
+/*
+  本設定ファイルはMtU先生の立ち絵素材用に書かれた設定ファイルが、想定通りに動作しているか検証するために書かれたものです。
+  本設定ファイルは開発者（ちくぼん）用に書かれたものなので、必ず使用する前にsearch_pathsの項目が適切に設定されているか確認してください。
+*/
+{
+  "speakers": {},
+  "assistant_seika": {
+    "seika_say2_exe_path": "C:/Users/tikubonn/Downloads/assistantseika20220504u/SeikaSay2/SeikaSay2.exe",
+  },
+  "video": {
+    "width": 1280,
+    "height": 720,
+    "frame_rate": 24,
+    "scale": 1,
+    "audio_rate": 44100,
+    "audio_ch": 2,
+  },
+  "voice_generator": {
+    "type": "simple",
+  },
+  "graphic_generator": {
+    "type": "simple",
+    "y": 200,
+  },
+  "voice_postprocessors": [
+    {
+      "type": "psdtoolkit_0.2_lipsync_preparation",
+    },
+  ],
+  "graphic_postprocessors": [
+    {
+      "type": "hopping_at_speaking",
+    },
+    {
+      "type": "bounce_at_speaking",
+    },
+    {
+      "type": "hopping",
+    },
+    {
+      "type": "bounce",
+    },
+    {
+      "type": "raster",
+    }
+  ],
+  "background_object_generators": [
+    {
+      "type": "color_background"
+    },
+    {
+      "type": "image_background",
+      "stretch": true
+    },
+    {
+      "type": "video_background",
+      "stretch": true,
+      "loop": false
+    }
+  ],
+  "foreground_object_generators": [
+    {
+      "type": "cinema_scope",
+      "ratio": 1.33
+    },
+    {
+      "type": "subtitle",
+      "x": 0,
+      "y": 316,
+      "font": "Meiryo",
+      "size": 24
+    },
+    {
+      "type": "bgm",
+      "volume": 0.3
+    },
+    {
+      "type": "se",
+      "volume": 0.6
+    }
+  ],
+  "search_paths": [
+    "C:/Users/tikubonn/Pictures/立ち絵素材/MtU_yukari_ver4.0", //PSDファイルの置かれたフォルダを指定してください。
+    "C:/Users/tikubonn/Pictures/立ち絵素材/MtU_maki_ver3.0", //PSDファイルの置かれたフォルダを指定してください。
+    "C:/Users/tikubonn/Pictures/立ち絵素材/MtU_akari+", //PSDファイルの置かれたフォルダを指定してください。
+  ],
+  "imports": [
+    "./config/psdtoolkit-0.2/MtU/結月ゆかり.json",
+    "./config/psdtoolkit-0.2/MtU/弦巻マキ.json",
+    "./config/psdtoolkit-0.2/MtU/紲星あかり.json",
+  ],
+  "voice_save_dir": "./voice",
+}
