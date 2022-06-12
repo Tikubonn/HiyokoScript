@@ -5,9 +5,7 @@
 ![](https://img.shields.io/badge/python-3.10-blue)
 ![](https://img.shields.io/github/license/tikubonn/HiyokoScript)
 
-<video poster="Sample/挨拶.png" width="50%" controls>
-  <source src="Sample/挨拶.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/7812951/173231979-f917317e-220c-4940-b47f-5a1c1b0e96ba.mp4
 
 ひよこすくりぷとは動画編集の補助を目的に開発されたスクリプト言語です。
 このスクリプト言語は脚本ライクな構文から「音声」「字幕」「立ち絵」などを含むエクスポートファイルを生成します。
