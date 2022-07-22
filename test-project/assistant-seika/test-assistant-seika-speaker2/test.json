@@ -1,0 +1,66 @@
+{
+  "speakers": {
+    "ずんだもん": {
+      "voices": {
+        "ずん1": {
+          "type": "assistant_seika",
+          "name": "ずんだもん（ノーマル）",
+        },
+        "ずん2": {
+          "type": "assistant_seika",
+          "name": "ずんだもん（ノーマル）",
+          "application": "voicevox",
+        },
+        "ずん3": {
+          "type": "assistant_seika",
+          "name": "ずんだもん（ノーマル）",
+          "application": "VOICEVOX",
+        },
+        "ずん4": {
+          "type": "assistant_seika",
+          "name": "ずんだもん（ノーマル）",
+          "application": "voicevox",
+          "application_bits": 64,
+        },
+        "ずん5": {
+          "type": "assistant_seika",
+          "name": "ずんだもん（ノーマル）",
+          "application": "voicevox",
+          "application_bits": 64,
+          "cid": 7006,
+        },
+        "ずん6": {
+          "type": "assistant_seika",
+          "cid": 7006,
+        },
+      },
+    },
+  },
+  "assistant_seika": {
+    "seika_say2_exe_path": "C:/Users/tikubonn/Downloads/assistantseika20220713u/SeikaSay2/SeikaSay2.exe",
+  },
+  "hiyoko_script": {
+    "hiyoko_script_command": "py HiyokoScript.py",
+  },
+  "video": {
+    "width": 1280,
+    "height": 720,
+    "frame_rate": 24,
+    "scale": 1,
+    "audio_rate": 44100,
+    "audio_ch": 2,
+  },
+  "voice_generator": {
+    "type": "simple",
+  },
+  "graphic_generator": {
+    "type": "simple",
+    "y": 0,
+  },
+  "voice_postprocessors": [],
+  "graphic_postprocessors": [],
+  "background_object_generators": [],
+  "foreground_object_generators": [], 
+  "search_paths": [],
+  "voice_save_dir": "./voice",
+}

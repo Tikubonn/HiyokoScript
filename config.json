@@ -206,10 +206,12 @@
     "softalkw_exe_path": "C:/Users/tikubonn/Desktop/softalk/softalkw.exe",
   },
   "assistant_seika": {
-    "seika_say2_exe_path": "C:/Users/tikubonn/Downloads/assistantseika20220504u/SeikaSay2/SeikaSay2.exe",
+    "seika_say2_exe_path": "C:/Users/tikubonn/Downloads/assistantseika20220713u/SeikaSay2/SeikaSay2.exe",
   },
   "hiyoko_script": {
     "hiyoko_script_command": "py HiyokoScript.py",
+    "hiyoko_script_gui_command": "py HiyokoScriptGUI.py",
+    "hiyoko_script_editor_command": "py HiyokoScriptEditor.py"
   },
   "video": {
     "width": 1280,

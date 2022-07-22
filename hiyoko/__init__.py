@@ -1,8 +1,8 @@
 
 from .layer_group import LayerGroup
 from .parent_holder import ParentHolder 
+from .config import resolve_config
 from .config_holder import ConfigHolder 
-from .config_utility import build_config
 from .deserializable import Deserializable
 from .object import Object, GeneratedObject, CharacterGraphicObject, SEObject, BGMObject, ColorBackgroundObject, ImageBackgroundObject, VideoBackgroundObject, CinemaScopeObject, SubtitleObject, FilterObject, BounceObject, RasterObject, HoppingObject 
 from .object_generator import ObjectGenerator, ColorBackgroundGenerator, ImageBackgroundGenerator, VideoBackgroundGenerator, CinemaScopeGenerator, SubtitleGenerator, SEGenerator, BGMGenerator
@@ -26,6 +26,8 @@ from .psdtoolkit_speaker_graphic_0_2 import PSDToolKitSpeakerGraphic_0_2
 from .psdtoolkit_speaker_voice_postprocessor_0_2 import PSDToolKitLipSyncPreparationPostProcessor_0_2
 from .temp_symlink import TempSymLink
 from .environment_holder import EnvironmentHolder
+from .swapped_file import SwappedFile 
+from .file import open_stdin, open_stdout, open_stderr
 
 SpeakerVoice.speaker_voice_type_table = SpeakerVoice.speaker_voice_type_table | {
   "copy": CopySpeakerVoice, 

@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "json5",
+    "Home-page": "https://github.com/json5/json5",
+    "LicenseURLs": [
+      "https://raw.githubusercontent.com/json5/json5/main/LICENSE.md"
+    ]
+  },
+  {
+    "Name": "ordered-set",
+    "Home-page": "https://github.com/rspeer/ordered-set",
+    "LicenseURLs": [
+      "https://raw.githubusercontent.com/rspeer/ordered-set/master/MIT-LICENSE"
+    ]
+  },
+  {
+    "Name": "Python",
+    "Home-page": "https://github.com/python/cpython",
+    "LicenseURLs": [
+      "https://raw.githubusercontent.com/python/cpython/9d38120e335357a3b294277fd5eff0a10e46e043/LICENSE"
+    ]
+  }
+]

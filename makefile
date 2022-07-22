@@ -1,6 +1,15 @@
-
+	
 export LANG=ja_JP.UTF-8 #CP932 cause character corruption when mkdir.
-export PYTHON=py
+
+ifeq ($(EXE), 1)
+export HIYOKO_SCRIPT_COMMAND=./HiyokoScript.exe
+export HIYOKO_SCRIPT_GUI_COMMAND=./HiyokoScriptGUI.exe
+export HIYOKO_SCRIPT_EDITOR_COMMAND=./HiyokoScriptEditor.exe
+else
+export HIYOKO_SCRIPT_COMMAND=pipenv run python HiyokoScript.py
+export HIYOKO_SCRIPT_GUI_COMMAND=pipenv run python HiyokoScriptGUI.py
+export HIYOKO_SCRIPT_EDITOR_COMMAND=pipenv run python HiyokoScriptEditor.py
+endif
 
 .PHONY: release
 release:
@@ -8,24 +17,53 @@ release:
 
 .PHONY: setup
 setup:
-	$(PYTHON) -m pip install git+https://github.com/tikubonn/exolib
-	$(PYTHON) -m pip install git+https://github.com/tikubonn/psdtoolkit-util
-	$(PYTHON) -m pip install opencv-python
-	$(PYTHON) -m pip install pydub
-	$(PYTHON) -m pip install json5
-	$(PYTHON) -m pip install ordered-set
-	$(PYTHON) -m pip install pyinstaller
+	pip install pipenv
+	pip install pip-license-gen
+	pipenv install 
+
+.PHONY: test
+test: 
+	pipenv run python -m unittest
+	make test-project -B #always make.
+	make Sample -B #always make.
+
+test-project: test-project/assistant-seika
+
+test-project/assistant-seika: test-project/assistant-seika/test-assistant-seika-speaker 
+
+test-project/assistant-seika/test-assistant-seika-speaker: test-project/assistant-seika/test-assistant-seika-speaker/test.exo test-project/assistant-seika/test-assistant-seika-speaker2/test.exo
+
+test-project/assistant-seika/test-assistant-seika-speaker/test.exo: test-project/assistant-seika/test-assistant-seika-speaker/test.txt test-project/assistant-seika/test-assistant-seika-speaker/test.json
+	$(HIYOKO_SCRIPT_COMMAND) test-project/assistant-seika/test-assistant-seika-speaker/test.txt --config-file test-project/assistant-seika/test-assistant-seika-speaker/test.json -o test-project/assistant-seika/test-assistant-seika-speaker/test.exo
+
+test-project/assistant-seika/test-assistant-seika-speaker2/test.exo: test-project/assistant-seika/test-assistant-seika-speaker2/test.txt test-project/assistant-seika/test-assistant-seika-speaker2/test.json
+	$(HIYOKO_SCRIPT_COMMAND) test-project/assistant-seika/test-assistant-seika-speaker2/test.txt --config-file test-project/assistant-seika/test-assistant-seika-speaker2/test.json -o test-project/assistant-seika/test-assistant-seika-speaker2/test.exo
 
 HiyokoScript.zip: dist 
-	cd dist && $(PYTHON) -m zipfile -c ../HiyokoScript.zip * 
+	cd dist && pipenv run python -m zipfile -c ../HiyokoScript.zip * 
 
-dist: dist/HiyokoScript.exe dist/HiyokoScriptGUI.exe dist/config.json dist/language.json dist/language.gui.json dist/README.md dist/README_SYNTAX.md dist/README_CONFIG.md dist/README_ERROR.md dist/LICENSE dist/LICENSE_ALL dist/LICENSE_EXOLIB dist/LICENSE_JSON5 dist/LICENSE_OPENCV_PYTHON dist/LICENSE_OPENCV_PYTHON_THIRD_PERTY dist/LICENSE_ORDERED_SET dist/LICENSE_PSDTOOLKIT_UTIL dist/LICENSE_PYDUB dist/LICENSE_PYINSTALLER dist/icon dist/config dist/Sample dist/SampleBackgroundImage dist/SampleBackgroundVideo dist/SampleCharacterGraphic dist/SampleBGM dist/SampleSE
+dist: dist/HiyokoScript.exe dist/HiyokoScriptGUI.exe dist/HiyokoScriptEditor.exe dist/config.json dist/language.gui.json dist/language.editor.json dist/README.md dist/README_SYNTAX.md dist/README_CONFIG.md dist/README_ERROR.md dist/LICENSE dist/LICENSE_THIRD_PARTY dist/picture dist/config dist/Sample dist/SampleBackgroundImage dist/SampleBackgroundVideo dist/SampleCharacterGraphic dist/SampleBGM dist/SampleSE
 
-dist/HiyokoScript.exe: HiyokoScript.py hiyoko icon/HiyokoScript.ico
-	pyinstaller HiyokoScript.py --onefile --icon=icon/HiyokoScript.ico
+dist/HiyokoScript.exe: HiyokoScript.exe
+	mkdir -p dist
+	cp HiyokoScript.exe dist/HiyokoScript.exe
 
-dist/HiyokoScriptGUI.exe: HiyokoScriptGUI.py hiyoko hiyoko_gui icon/HiyokoScriptGUI.ico
-	pyinstaller HiyokoScriptGUI.py --onefile --icon=icon/HiyokoScriptGUI.ico
+dist/HiyokoScriptGUI.exe: HiyokoScriptGUI.exe
+	mkdir -p dist
+	cp HiyokoScriptGUI.exe dist/HiyokoScriptGUI.exe
+
+dist/HiyokoScriptEditor.exe: HiyokoScriptEditor.exe
+	mkdir -p dist
+	cp HiyokoScriptEditor.exe dist/HiyokoScriptEditor.exe
+
+HiyokoScript.exe: HiyokoScript.py picture/HiyokoScript.ico
+	pipenv run nuitka --onefile --follow-imports --include-package=json5 --enable-plugin=numpy --enable-plugin=tk-inter --windows-icon-from-ico=picture/HiyokoScript.ico HiyokoScript.py
+
+HiyokoScriptGUI.exe: HiyokoScriptGUI.py picture/HiyokoScriptGUI.ico
+	pipenv run nuitka --onefile --follow-imports --include-package=json5 --enable-plugin=numpy --enable-plugin=tk-inter --windows-icon-from-ico=picture/HiyokoScriptGUI.ico HiyokoScriptGUI.py
+
+HiyokoScriptEditor.exe: HiyokoScriptEditor.py picture/HiyokoScriptEditor.ico
+	pipenv run nuitka --onefile --follow-imports --include-package=json5 --enable-plugin=numpy --enable-plugin=tk-inter --windows-icon-from-ico=picture/HiyokoScriptEditor.ico HiyokoScriptEditor.py
 
 #readme files
 
@@ -46,59 +84,48 @@ dist/README_ERROR.md: README_ERROR.md
  dist/LICENSE: LICENSE
 	cp LICENSE dist/LICENSE
 
-dist/LICENSE_ALL: LICENSE_ALL
-	cp LICENSE_ALL dist/LICENSE_ALL
+dist/LICENSE_THIRD_PARTY: LICENSE_THIRD_PARTY
+	mkdir -p dist
+	cp LICENSE_THIRD_PARTY dist/LICENSE_THIRD_PARTY
 
-dist/LICENSE_EXOLIB: LICENSE_EXOLIB
-	cp LICENSE_EXOLIB dist/LICENSE_EXOLIB
-
-dist/LICENSE_JSON5: LICENSE_JSON5
-	cp LICENSE_JSON5 dist/LICENSE_JSON5
-
-dist/LICENSE_OPENCV_PYTHON: LICENSE_OPENCV_PYTHON
-	cp LICENSE_OPENCV_PYTHON dist/LICENSE_OPENCV_PYTHON
-
-dist/LICENSE_OPENCV_PYTHON_THIRD_PERTY: LICENSE_OPENCV_PYTHON_THIRD_PERTY
-	cp LICENSE_OPENCV_PYTHON_THIRD_PERTY dist/LICENSE_OPENCV_PYTHON_THIRD_PERTY
-
-dist/LICENSE_ORDERED_SET: LICENSE_ORDERED_SET
-	cp LICENSE_ORDERED_SET dist/LICENSE_ORDERED_SET
-
-dist/LICENSE_PSDTOOLKIT_UTIL: LICENSE_PSDTOOLKIT_UTIL
-	cp LICENSE_PSDTOOLKIT_UTIL dist/LICENSE_PSDTOOLKIT_UTIL
-
-dist/LICENSE_PYDUB: LICENSE_PYDUB
-	cp LICENSE_PYDUB dist/LICENSE_PYDUB
-
-dist/LICENSE_PYINSTALLER: LICENSE_PYINSTALLER
-	cp LICENSE_PYINSTALLER dist/LICENSE_PYINSTALLER
+LICENSE_THIRD_PARTY: Pipfile Pipfile.lock pip-license-gen.json
+	pipenv run pip-license-gen > LICENSE_THIRD_PARTY
+	pipenv run pip-license-gen --from-json pip-license-gen.json >> LICENSE_THIRD_PARTY
 
 #config files
 
 dist/config.json: config.json utility/json-editor.py
 	mkdir -p dist
 	cp config.json dist/config.json
-	$(PYTHON) utility/json-editor.py dist/config.json --set softalk.softalkw_exe_path=\"\" assistant_seika.seika_say2_exe_path=\"\" --delete hiyoko_script
-
-dist/language.json: language.json
-	mkdir -p dist
-	cp language.json dist/language.json
+	pipenv run python utility/json-editor.py dist/config.json --set softalk.softalkw_exe_path=\"\" assistant_seika.seika_say2_exe_path=\"\" --delete hiyoko_script
 
 dist/language.gui.json: language.gui.json
 	mkdir -p dist
 	cp language.gui.json dist/language.gui.json
 
-#icon
+dist/language.editor.json: language.editor.json
+	mkdir -p dist
+	cp language.editor.json dist/language.editor.json
 
-dist/icon: dist/icon/HiyokoScript.ico dist/icon/HiyokoScriptGUI.ico
+#picture
 
-dist/icon/HiyokoScript.ico: icon/HiyokoScript.ico
-	mkdir -p dist/icon
-	cp icon/HiyokoScript.ico dist/icon/HiyokoScript.ico
+dist/picture: dist/picture/HiyokoScript.ico dist/picture/HiyokoScriptGUI.ico dist/picture/HiyokoScriptEditor.ico dist/picture/HiyokoScriptGUIHeader.png
 
-dist/icon/HiyokoScriptGUI.ico: icon/HiyokoScriptGUI.ico
-	mkdir -p dist/icon
-	cp icon/HiyokoScriptGUI.ico dist/icon/HiyokoScriptGUI.ico
+dist/picture/HiyokoScript.ico: picture/HiyokoScript.ico
+	mkdir -p dist/picture
+	cp picture/HiyokoScript.ico dist/picture/HiyokoScript.ico
+
+dist/picture/HiyokoScriptGUI.ico: picture/HiyokoScriptGUI.ico
+	mkdir -p dist/picture
+	cp picture/HiyokoScriptGUI.ico dist/picture/HiyokoScriptGUI.ico
+
+dist/picture/HiyokoScriptEditor.ico: picture/HiyokoScriptEditor.ico
+	mkdir -p dist/picture
+	cp picture/HiyokoScriptEditor.ico dist/picture/HiyokoScriptEditor.ico
+
+dist/picture/HiyokoScriptGUIHeader.png: picture/HiyokoScriptGUIHeader.png
+	mkdir -p dist/picture
+	cp picture/HiyokoScriptGUIHeader.png dist/picture/HiyokoScriptGUIHeader.png
 
 #config 
 
@@ -156,7 +183,7 @@ dist/Sample/psdtoolkit-0.2/坂本あひる/雨晴はう.mp4: Sample/psdtoolkit-0
 dist/Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json: Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json
 	mkdir -p dist/Sample/psdtoolkit-0.2/坂本あひる
 	cp Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json dist/Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json
-	$(PYTHON) utility/json-editor.py dist/Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json --set search_paths=\[\] 
+	pipenv run python utility/json-editor.py dist/Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json --set search_paths=\[\] 
 
 dist/Sample/psdtoolkit-0.2/MtU: dist/Sample/psdtoolkit-0.2/MtU/結月ゆかり.txt dist/Sample/psdtoolkit-0.2/MtU/結月ゆかり.mp4 dist/Sample/psdtoolkit-0.2/MtU/弦巻マキ.txt dist/Sample/psdtoolkit-0.2/MtU/弦巻マキ.mp4 dist/Sample/psdtoolkit-0.2/MtU/紲星あかり.txt dist/Sample/psdtoolkit-0.2/MtU/紲星あかり.mp4 dist/Sample/psdtoolkit-0.2/MtU/MtU.json
 
@@ -187,7 +214,7 @@ dist/Sample/psdtoolkit-0.2/MtU/紲星あかり.mp4: Sample/psdtoolkit-0.2/MtU/�
 dist/Sample/psdtoolkit-0.2/MtU/MtU.json: Sample/psdtoolkit-0.2/MtU/MtU.json
 	mkdir -p dist/Sample/psdtoolkit-0.2/MtU
 	cp Sample/psdtoolkit-0.2/MtU/MtU.json dist/Sample/psdtoolkit-0.2/MtU/MtU.json
-	$(PYTHON) utility/json-editor.py dist/Sample/psdtoolkit-0.2/MtU/MtU.json --set assistant_seika.seika_say2_exe_path=\[\] search_paths=\[\] 
+	pipenv run python utility/json-editor.py dist/Sample/psdtoolkit-0.2/MtU/MtU.json --set assistant_seika.seika_say2_exe_path=\[\] search_paths=\[\] 
 
 dist/Sample/psdtoolkit-0.1.3: dist/Sample/psdtoolkit-0.1.3/坂本あひる
 
@@ -530,104 +557,104 @@ dist/SampleSE/もちっ3.mp3: SampleSE/もちっ3.mp3
 Sample: Sample/psdtoolkit-0.2 Sample/psdtoolkit-0.1.3 Sample/AssistantSeika.exo Sample/BGM.exo Sample/SE.exo Sample/SofTalk.exo Sample/VOICEVOX.exo Sample/ぐにゃぐにゃ.exo Sample/ぴょんぴょん.exo Sample/もにゅもにゅ.exo Sample/挨拶.exo Sample/背景画像.exo Sample/背景色.exo Sample/立ち絵指定.exo Sample/立ち絵指定2.exo Sample/立ち絵指定3.exo Sample/話者指定.exo Sample/話者指定2.exo Sample/背景動画.exo Sample/字幕.exo Sample/自動ぴょんぴょん.exo Sample/自動もにゅもにゅ.exo
 
 Sample/AssistantSeika.exo: Sample/AssistantSeika.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/AssistantSeika.txt -o Sample/AssistantSeika.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/AssistantSeika.txt -o Sample/AssistantSeika.exo
 
 Sample/BGM.exo: Sample/BGM.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/BGM.txt -o Sample/BGM.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/BGM.txt -o Sample/BGM.exo
 
 Sample/SE.exo: Sample/SE.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/SE.txt -o Sample/SE.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/SE.txt -o Sample/SE.exo
 
 Sample/SofTalk.exo: Sample/SofTalk.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/SofTalk.txt -o Sample/SofTalk.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/SofTalk.txt -o Sample/SofTalk.exo
 
 Sample/VOICEVOX.exo: Sample/VOICEVOX.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/VOICEVOX.txt -o Sample/VOICEVOX.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/VOICEVOX.txt -o Sample/VOICEVOX.exo
 
 Sample/ぐにゃぐにゃ.exo: Sample/ぐにゃぐにゃ.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/ぐにゃぐにゃ.txt -o Sample/ぐにゃぐにゃ.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/ぐにゃぐにゃ.txt -o Sample/ぐにゃぐにゃ.exo
 
 Sample/ぴょんぴょん.exo: Sample/ぴょんぴょん.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/ぴょんぴょん.txt -o Sample/ぴょんぴょん.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/ぴょんぴょん.txt -o Sample/ぴょんぴょん.exo
 
 Sample/もにゅもにゅ.exo: Sample/もにゅもにゅ.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/もにゅもにゅ.txt -o Sample/もにゅもにゅ.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/もにゅもにゅ.txt -o Sample/もにゅもにゅ.exo
 
 Sample/挨拶.exo: Sample/挨拶.txt config.json Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json config/psdtoolkit-0.2/坂本あひる/ずんだもん.json config/psdtoolkit-0.2/坂本あひる/春日部つむぎ.json
-	$(PYTHON) HiyokoScript.py Sample/挨拶.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/挨拶.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/挨拶.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/挨拶.exo
 
 Sample/背景画像.exo: Sample/背景画像.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/背景画像.txt -o Sample/背景画像.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/背景画像.txt -o Sample/背景画像.exo
 
 Sample/背景色.exo: Sample/背景色.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/背景色.txt -o Sample/背景色.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/背景色.txt -o Sample/背景色.exo
 
 Sample/立ち絵指定.exo: Sample/立ち絵指定.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/立ち絵指定.txt -o Sample/立ち絵指定.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/立ち絵指定.txt -o Sample/立ち絵指定.exo
 
 Sample/立ち絵指定2.exo: Sample/立ち絵指定2.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/立ち絵指定2.txt -o Sample/立ち絵指定2.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/立ち絵指定2.txt -o Sample/立ち絵指定2.exo
 
 Sample/立ち絵指定3.exo: Sample/立ち絵指定3.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/立ち絵指定3.txt -o Sample/立ち絵指定3.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/立ち絵指定3.txt -o Sample/立ち絵指定3.exo
 
 Sample/話者指定.exo: Sample/話者指定.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/話者指定.txt -o Sample/話者指定.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/話者指定.txt -o Sample/話者指定.exo
 
 Sample/話者指定2.exo: Sample/話者指定2.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/話者指定2.txt -o Sample/話者指定2.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/話者指定2.txt -o Sample/話者指定2.exo
 
 Sample/背景動画.exo: Sample/背景動画.txt config.json
-	$(PYTHON) HiyokoScript.py Sample/背景動画.txt -o Sample/背景動画.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/背景動画.txt -o Sample/背景動画.exo
 
 Sample/字幕.exo: Sample/字幕.txt config.json 
-	$(PYTHON) HiyokoScript.py Sample/字幕.txt -o Sample/字幕.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/字幕.txt -o Sample/字幕.exo
 
 Sample/自動ぴょんぴょん.exo: Sample/自動ぴょんぴょん.txt config.json 
-	$(PYTHON) HiyokoScript.py Sample/自動ぴょんぴょん.txt -o Sample/自動ぴょんぴょん.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/自動ぴょんぴょん.txt -o Sample/自動ぴょんぴょん.exo
 
 Sample/自動もにゅもにゅ.exo: Sample/自動もにゅもにゅ.txt config.json 
-	$(PYTHON) HiyokoScript.py Sample/自動もにゅもにゅ.txt -o Sample/自動もにゅもにゅ.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/自動もにゅもにゅ.txt -o Sample/自動もにゅもにゅ.exo
 
 Sample/psdtoolkit-0.2: Sample/psdtoolkit-0.2/坂本あひる Sample/psdtoolkit-0.2/MtU
 
 Sample/psdtoolkit-0.2/坂本あひる: Sample/psdtoolkit-0.2/坂本あひる/ずんだもん.exo Sample/psdtoolkit-0.2/坂本あひる/四国めたん.exo Sample/psdtoolkit-0.2/坂本あひる/春日部つむぎ.exo Sample/psdtoolkit-0.2/坂本あひる/九州そら.exo Sample/psdtoolkit-0.2/坂本あひる/雨晴はう.exo
 
 Sample/psdtoolkit-0.2/坂本あひる/ずんだもん.exo: Sample/psdtoolkit-0.2/坂本あひる/ずんだもん.txt Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json config/psdtoolkit-0.2/坂本あひる/ずんだもん.json
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.2/坂本あひる/ずんだもん.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.2/坂本あひる/ずんだもん.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.2/坂本あひる/ずんだもん.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.2/坂本あひる/ずんだもん.exo
 
 Sample/psdtoolkit-0.2/坂本あひる/四国めたん.exo: Sample/psdtoolkit-0.2/坂本あひる/四国めたん.txt Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json config/psdtoolkit-0.2/坂本あひる/四国めたん.json
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.2/坂本あひる/四国めたん.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.2/坂本あひる/四国めたん.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.2/坂本あひる/四国めたん.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.2/坂本あひる/四国めたん.exo
 
 Sample/psdtoolkit-0.2/坂本あひる/春日部つむぎ.exo: Sample/psdtoolkit-0.2/坂本あひる/春日部つむぎ.txt Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json config/psdtoolkit-0.2/坂本あひる/春日部つむぎ.json
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.2/坂本あひる/春日部つむぎ.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.2/坂本あひる/春日部つむぎ.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.2/坂本あひる/春日部つむぎ.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.2/坂本あひる/春日部つむぎ.exo
 
 Sample/psdtoolkit-0.2/坂本あひる/九州そら.exo: Sample/psdtoolkit-0.2/坂本あひる/九州そら.txt Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json config/psdtoolkit-0.2/坂本あひる/九州そら.json
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.2/坂本あひる/九州そら.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.2/坂本あひる/九州そら.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.2/坂本あひる/九州そら.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.2/坂本あひる/九州そら.exo
 
 Sample/psdtoolkit-0.2/坂本あひる/雨晴はう.exo: Sample/psdtoolkit-0.2/坂本あひる/雨晴はう.txt Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json config/psdtoolkit-0.2/坂本あひる/雨晴はう.json
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.2/坂本あひる/雨晴はう.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.2/坂本あひる/雨晴はう.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.2/坂本あひる/雨晴はう.txt --config-file Sample/psdtoolkit-0.2/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.2/坂本あひる/雨晴はう.exo
 
 Sample/psdtoolkit-0.2/MtU: Sample/psdtoolkit-0.2/MtU/結月ゆかり.exo Sample/psdtoolkit-0.2/MtU/弦巻マキ.exo Sample/psdtoolkit-0.2/MtU/紲星あかり.exo
 
 Sample/psdtoolkit-0.2/MtU/結月ゆかり.exo: Sample/psdtoolkit-0.2/MtU/結月ゆかり.txt Sample/psdtoolkit-0.2/MtU/MtU.json config/psdtoolkit-0.2/MtU/結月ゆかり.json
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.2/MtU/結月ゆかり.txt --config-file Sample/psdtoolkit-0.2/MtU/MtU.json -o Sample/psdtoolkit-0.2/MtU/結月ゆかり.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.2/MtU/結月ゆかり.txt --config-file Sample/psdtoolkit-0.2/MtU/MtU.json -o Sample/psdtoolkit-0.2/MtU/結月ゆかり.exo
 
 Sample/psdtoolkit-0.2/MtU/弦巻マキ.exo: Sample/psdtoolkit-0.2/MtU/弦巻マキ.txt Sample/psdtoolkit-0.2/MtU/MtU.json config/psdtoolkit-0.2/MtU/弦巻マキ.json
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.2/MtU/弦巻マキ.txt --config-file Sample/psdtoolkit-0.2/MtU/MtU.json -o Sample/psdtoolkit-0.2/MtU/弦巻マキ.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.2/MtU/弦巻マキ.txt --config-file Sample/psdtoolkit-0.2/MtU/MtU.json -o Sample/psdtoolkit-0.2/MtU/弦巻マキ.exo
 
 Sample/psdtoolkit-0.2/MtU/紲星あかり.exo: Sample/psdtoolkit-0.2/MtU/紲星あかり.txt Sample/psdtoolkit-0.2/MtU/MtU.json config/psdtoolkit-0.2/MtU/紲星あかり.json
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.2/MtU/紲星あかり.txt --config-file Sample/psdtoolkit-0.2/MtU/MtU.json -o Sample/psdtoolkit-0.2/MtU/紲星あかり.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.2/MtU/紲星あかり.txt --config-file Sample/psdtoolkit-0.2/MtU/MtU.json -o Sample/psdtoolkit-0.2/MtU/紲星あかり.exo
 
 Sample/psdtoolkit-0.1.3: Sample/psdtoolkit-0.1.3/坂本あひる
 
 Sample/psdtoolkit-0.1.3/坂本あひる: Sample/psdtoolkit-0.1.3/坂本あひる/ずんだもん.exo Sample/psdtoolkit-0.1.3/坂本あひる/四国めたん.exo Sample/psdtoolkit-0.1.3/坂本あひる/春日部つむぎ.exo 
 
 Sample/psdtoolkit-0.1.3/坂本あひる/ずんだもん.exo: Sample/psdtoolkit-0.1.3/坂本あひる/ずんだもん.txt Sample/psdtoolkit-0.1.3/坂本あひる/坂本あひる.json config/psdtoolkit-0.1.3/坂本あひる/ずんだもん.json 
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.1.3/坂本あひる/ずんだもん.txt --config-file Sample/psdtoolkit-0.1.3/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.1.3/坂本あひる/ずんだもん.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.1.3/坂本あひる/ずんだもん.txt --config-file Sample/psdtoolkit-0.1.3/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.1.3/坂本あひる/ずんだもん.exo
 
 Sample/psdtoolkit-0.1.3/坂本あひる/四国めたん.exo: Sample/psdtoolkit-0.1.3/坂本あひる/四国めたん.txt Sample/psdtoolkit-0.1.3/坂本あひる/坂本あひる.json config/psdtoolkit-0.1.3/坂本あひる/四国めたん.json 
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.1.3/坂本あひる/四国めたん.txt --config-file Sample/psdtoolkit-0.1.3/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.1.3/坂本あひる/四国めたん.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.1.3/坂本あひる/四国めたん.txt --config-file Sample/psdtoolkit-0.1.3/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.1.3/坂本あひる/四国めたん.exo
 
 Sample/psdtoolkit-0.1.3/坂本あひる/春日部つむぎ.exo: Sample/psdtoolkit-0.1.3/坂本あひる/春日部つむぎ.txt Sample/psdtoolkit-0.1.3/坂本あひる/坂本あひる.json config/psdtoolkit-0.1.3/坂本あひる/春日部つむぎ.json 
-	$(PYTHON) HiyokoScript.py Sample/psdtoolkit-0.1.3/坂本あひる/春日部つむぎ.txt --config-file Sample/psdtoolkit-0.1.3/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.1.3/坂本あひる/春日部つむぎ.exo
+	$(HIYOKO_SCRIPT_COMMAND) Sample/psdtoolkit-0.1.3/坂本あひる/春日部つむぎ.txt --config-file Sample/psdtoolkit-0.1.3/坂本あひる/坂本あひる.json -o Sample/psdtoolkit-0.1.3/坂本あひる/春日部つむぎ.exo

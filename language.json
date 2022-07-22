@@ -1,8 +1,0 @@
-{
-  "transpile_start": "変換を開始します",
-  "transpile_start_desc": "変換を開始します。「はい」を押して処理が完了するまでお待ちください。",
-  "transpile_end": "変換が完了しました",
-  "transpile_end_desc": "変換が完了しました。出力先ファイルをご確認ください。",
-  "transpile_errored": "エラーが発生しました",
-  "transpile_errored_desc": "処理中にエラーが発生しました。安全のため処理を中断し、エラー情報をファイルに書き出します。",
-}

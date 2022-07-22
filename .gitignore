@@ -1,10 +1,20 @@
+
 __pycache__
+HiyokoScript.build
+HiyokoScript.dist
+HiyokoScript.onefile-build
+HiyokoScriptGUI.build
+HiyokoScriptGUI.dist
+HiyokoScriptGUI.onefile-build
+HiyokoScriptEditor.build
+HiyokoScriptEditor.dist
+HiyokoScriptEditor.onefile-build
 voice 
-build
 dist
 
-icon/*.psd
-icon/*.png
+picture/*.psd
+picture/*.png
+!picture/HiyokoScriptGUIHeader.png
 
 error-log-*.txt
 *.mp3.lwi
@@ -19,3 +29,4 @@ ffmpeg.exe
 ffplay.exe
 ffprobe.exe
 history.gui.json
+history.editor.json

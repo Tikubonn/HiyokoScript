@@ -1,0 +1,7 @@
+
+#ゆか1 これはAssistantSeika連携のテストです1
+#ゆか2 これはAssistantSeika連携のテストです2
+#ゆか3 これはAssistantSeika連携のテストです3
+#ゆか4 これはAssistantSeika連携のテストです4
+#ゆか5 これはAssistantSeika連携のテストです5
+#ゆか6 これはAssistantSeika連携のテストです6

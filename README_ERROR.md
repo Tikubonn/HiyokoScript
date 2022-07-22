@@ -50,3 +50,8 @@ PSDToolKitの立ち絵で、`*`から始まるレイヤーを非表示にしよ�
 ## Could not find layer XXX in XXX 
 
 PSDToolKitの立ち絵で存在しないレイヤーを変更しようとしたときに発生するエラーです。
+
+## Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+
+ひよこすくりぷとに ffmpeg が導入されていないときに表示される警告文です。
+WAV形式以外の音声ファイルを取り扱わないのであれば無視していただいても問題ありません。

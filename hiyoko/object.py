@@ -227,9 +227,8 @@ class VideoBackgroundObject (GeneratedObject):
         if videocapture is None:
           raise ValueError("Could not open file {!r} with opencv.".format(self.file)) #error
         try:
-          videocapturewidth = videocapture.get(3)
-          videocaptureheight = videocapture.get(4)
-          videocapture.release()
+          videocapturewidth = videocapture.get(cv2.CAP_PROP_FRAME_WIDTH)
+          videocaptureheight = videocapture.get(cv2.CAP_PROP_FRAME_HEIGHT)
           scalex = self.parent.width / videocapturewidth
           scaley = self.parent.height / videocaptureheight
           return max(scalex, scaley)

@@ -1,0 +1,7 @@
+
+#ずん1 これはAssistantSeika連携のテストです1
+#ずん2 これはAssistantSeika連携のテストです2
+#ずん3 これはAssistantSeika連携のテストです3
+#ずん4 これはAssistantSeika連携のテストです4
+#ずん5 これはAssistantSeika連携のテストです5
+#ずん6 これはAssistantSeika連携のテストです6

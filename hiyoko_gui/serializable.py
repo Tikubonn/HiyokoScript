@@ -10,5 +10,5 @@ class Serializable (ABC):
     pass
 
   @abstractclassmethod
-  def deserialize (self, params:MutableMapping) -> "Serializable": 
+  def deserialize (self, params:MutableMapping, *args, **kwargs) -> "Serializable": 
     pass

@@ -2,7 +2,6 @@
 from exolib import ObjectNode, TextParamNode, CustomObjectParamNode, AnimationEffectObjectParamNode, StandardDrawingParamNode, ObjectParamNode, GroupObjectParamNode
 from exofile import String, Float, Int, Boolean, ParamString, Param
 from pathlib import Path 
-from psd_tools import PSDImage
 from collections import OrderedDict
 from psdtoolkit_util import Flip, PSDVisibles, Params as PSDParams 
 from .object import SoundObject, FilterObject, GeneratedObject

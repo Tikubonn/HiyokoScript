@@ -36,7 +36,7 @@ class TempSymLink:
 
   def close (self):
     if not self._closed:
-      self._temppath.unlink()
       self._closed = True 
+      self._temppath.unlink()
     else:
       raise ValueError("{!r} is already closed.".format(self)) #error 

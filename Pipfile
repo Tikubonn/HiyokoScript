@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+exolib = {git = "https://github.com/tikubonn/exolib"}
+exofile = {git = "https://github.com/tikubonn/exofile"}
+psdtoolkit-util = {git = "https://github.com/tikubonn/psdtoolkit-util"}
+opencv-python = "*"
+pydub = "*"
+json5 = "*"
+ordered-set = "*"
+tkinterdnd2 = "*"
+requests = "*"
+nuitka = "*"
+zstandard = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
